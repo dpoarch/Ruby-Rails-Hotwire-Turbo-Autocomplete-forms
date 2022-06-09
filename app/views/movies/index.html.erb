@@ -1,0 +1,25 @@
+<% if(notice.present?) %>
+<div class="alert alert-primary mt-5" role="alert">
+  <%= notice %>
+</div>
+<% end %>
+
+
+
+<div id="movies">
+<div id="search_results" class="list-group mb-5" role="tablist"></div>
+<h1>Play List</h1>
+
+<%= link_to "Add movies", new_movie_path, class: 'mt-5 btn btn-primary' %>
+
+  <% @movies.each do |movie| %>
+    <div class="card mb-5 mt-5">
+    <%= render movie %>
+    <p>
+      <%= link_to "View details", movie, class: 'btn btn-primary mx-3' %>
+    </p>
+    </div>
+  <% end %>
+</div>
+
+

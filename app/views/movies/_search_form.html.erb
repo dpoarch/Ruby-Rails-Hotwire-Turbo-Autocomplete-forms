@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Hotwire</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/movies/2">Movie 2</a>
+        </li>
+  
+           <%= form_with url: search_movies_path, method: :post, class: 'mx-4 d-flex',  data: {controller: "debounce", debounce_target: "form" } do |form| %>
+      <%= form.search_field :title_search, class: 'form-control me-2',placeholder: 'Search movies', data: { action: "input->debounce#search" } %>
+    <% end %>
+
+      </ul>
+   
+    </div>
+  </div>
+</nav>
+
+
+

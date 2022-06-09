@@ -1,0 +1,5 @@
+<a href="#" class="list-group-item d-flex justify-content-between align-items-center"><strong>Results found: <%= movies.count %></strong></a>
+<% movies.each do |movie| %>
+  <%= link_to highlight(movie.title, params[:title_search]), movie, class: 'list-group-item list-group-item-action' %>
+<% end %>
+
